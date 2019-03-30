@@ -10,3 +10,18 @@ class PaginaInicialView(TemplateView):
     # nome do arquivo que vai ser utilizado para renderizar esta
     # página/método/classe
     template_name = "index.html"
+
+class SobreView(TemplateView):
+    # nome do arquivo que vai ser utilizado para renderizar esta
+    # página/método/classe
+    template_name = "sobre.html"
+
+class ContatoView(TemplateView):
+    # nome do arquivo que vai ser utilizado para renderizar esta
+    # página/método/classe
+    template_name = "contato.html"
+
+class ProjetosView(TemplateView):
+    # nome do arquivo que vai ser utilizado para renderizar esta
+    # página/método/classe
+    template_name = "projetos.html"

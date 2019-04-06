@@ -21,7 +21,12 @@ class ContatoView(TemplateView):
     # página/método/classe
     template_name = "contato.html"
 
-class ProjetosView(TemplateView):
+class CadastrosView(TemplateView):
     # nome do arquivo que vai ser utilizado para renderizar esta
     # página/método/classe
-    template_name = "projetos.html"
+    template_name = "cadastros.html"
+
+class CurriculoView(TemplateView):
+    # nome do arquivo que vai ser utilizado para renderizar esta
+    # página/método/classe
+    template_name = "curriculo.html"

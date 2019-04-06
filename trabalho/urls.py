@@ -12,5 +12,6 @@ urlpatterns = [
     path('', PaginaInicialView.as_view(), name="index"),
     path('sobre/', SobreView.as_view(), name="sobre"),
     path('contato/', ContatoView.as_view(), name="contato"),
-    path('projetos/', ProjetosView.as_view(), name="projetos"),
+    path('cadastros/', CadastrosView.as_view(), name="cadastros"),
+    path('curriculo/', CurriculoView.as_view(), name="curriculo"),
 ]

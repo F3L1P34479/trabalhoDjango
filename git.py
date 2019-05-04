@@ -9,7 +9,7 @@ while len(msg_commit) < 5:
     msg_commit = input("Mensagem do commit: ")
 
 # Define um email padrão para este 
-email_padrao = "yuri.whi@gmail.com"
+email_padrao = "felipe_sf4@hotmail.com"
 
 # Pede para o usuário informar outro email, caso ele queira
 email = input("Digite enter para manter o {} como padrão ou informe seu e-mail: ".format(email_padrao))

@@ -4,7 +4,7 @@ from django.db import models
 #toda classe no django é um model
 class Estado(models.Model):
     #nome_do_atributo = models.Tipo(configuração)
-    sigla   = models.CharField(max_length=2)
+    sigla   = models.CharField(max_length=2, unique = True)
     nome    = models.CharField(max_length=50)
     
     #Como se fosse toString e self = this
@@ -13,7 +13,7 @@ class Estado(models.Model):
 
 
 class Cidade(models.Model):
-    #Qunado você tem uma palavra toda em maiuscula significa que ela é uma constante
+    #Quando você tem uma palavra toda em maiuscula significa que ela é uma constante
     nome        = models.CharField(max_length=50)
     estado      = models.ForeignKey(Estado, on_delete=models.PROTECT) 
     descricao   = models.TextField(

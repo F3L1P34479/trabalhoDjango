@@ -30,5 +30,9 @@ urlpatterns = [
     path('excluir/cidade/<int:pk>/', CidadeDelete.as_view(), name="excluir-cidade"),
     path('excluir/pessoa/<int:pk>/', PessoaDelete.as_view(), name="excluir-pessoa"),
 
+    #URLS de excluir cadastros
+        path('listar/estado/', EstadoList.as_view(), name="listar-estados"),
+
+
     
 ]

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'trabalho.apps.TrabalhoConfig',# ativa este módulo
+    'usuarios.apps.UsuariosConfig',
     #'bootstrap4', # Ativa o bootstrap 4
     'crispy_forms', 
 ]

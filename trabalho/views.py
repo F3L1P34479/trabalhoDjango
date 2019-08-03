@@ -14,6 +14,9 @@ from django.views.generic import TemplateView
 #Importa ListView para gerar as telas com tabelas
 from django.views.generic.list import ListView
 
+#Importa o Mixin para obrigar login
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # Create your views here.
 
@@ -43,7 +46,7 @@ class CurriculoView(TemplateView):
 
 #################INSERIR#####################
 
-class EstadoCreate(CreateView):
+class EstadoCreate(LoginRequiredMixin,CreateView):
     # Define qual o modelo para essa classe, criando o form
     model = Estado
     # Qual o html que será utilizado?
@@ -66,7 +69,7 @@ class EstadoCreate(CreateView):
         return context
 
 
-class CidadeCreate(CreateView):
+class CidadeCreate(LoginRequiredMixin, CreateView):
     model = Cidade
     template_name = "trabalho/formulario.html"
     success_url = reverse_lazy("index")
@@ -82,7 +85,7 @@ class CidadeCreate(CreateView):
         return context
 
 
-class PessoaCreate(CreateView):
+class PessoaCreate(LoginRequiredMixin, CreateView):
     model = Pessoa
     template_name = "trabalho/formulario.html"
     success_url = reverse_lazy("index")
@@ -100,7 +103,7 @@ class PessoaCreate(CreateView):
 #################EDITAR#####################
 
 
-class EstadoUpdate(UpdateView):
+class EstadoUpdate(LoginRequiredMixin, UpdateView):
     # Define qual o modelo para essa classe, criando o form
     model = Estado
     # Qual o html que será utilizado?
@@ -120,7 +123,7 @@ class EstadoUpdate(UpdateView):
         return context
 
 
-class CidadeUpdate(UpdateView):
+class CidadeUpdate(LoginRequiredMixin, UpdateView):
     model = Cidade
     template_name = "trabalho/formulario.html"
     success_url = reverse_lazy("index")
@@ -136,7 +139,7 @@ class CidadeUpdate(UpdateView):
         return context
 
 
-class PessoaUpdate(UpdateView):
+class PessoaUpdate(LoginRequiredMixin, UpdateView):
     model = Pessoa
     template_name = "trabalho/formulario.html"
     success_url = reverse_lazy("index")
@@ -153,7 +156,7 @@ class PessoaUpdate(UpdateView):
 
 #################DELETAR#####################
 
-class EstadoDelete(DeleteView):
+class EstadoDelete(LoginRequiredMixin, DeleteView):
     # Define qual o modelo para essa classe, criando o form
     model = Estado
     # Qual o html que será utilizado?
@@ -174,7 +177,7 @@ class EstadoDelete(DeleteView):
         return context
 
 
-class CidadeDelete(DeleteView):
+class CidadeDelete(LoginRequiredMixin, DeleteView):
     model = Cidade
     template_name = "trabalho/formulario.html"
     success_url = reverse_lazy("index")
@@ -189,7 +192,7 @@ class CidadeDelete(DeleteView):
         return context
 
 
-class PessoaDelete(DeleteView):
+class PessoaDelete(LoginRequiredMixin, DeleteView):
     model = Pessoa
     template_name = "trabalho/formulario.html"
     success_url = reverse_lazy("index")
@@ -206,7 +209,7 @@ class PessoaDelete(DeleteView):
 #################LISTAR#####################
 
 #Vai gerar uma tela com uma lista de estados
-class EstadoList(ListView):
+class EstadoList(LoginRequiredMixin, ListView):
     #informa qual o modelo
     model = Estado
     #e o

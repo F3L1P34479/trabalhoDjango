@@ -274,6 +274,9 @@
   <!-- Footer -->
   <footer class="bg-black small text-center text-white-50">
     <div class="container">
+      {% if request.user.is_authenticated %}
+        <h4>Usuário logado</h4>
+      {% endif %}
       Copyright &copy; Your Website 2019
     </div>
   </footer>
